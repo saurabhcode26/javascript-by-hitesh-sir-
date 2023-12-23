@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<style>
+    body{
+        background-color: black;
+        color: white;
+    }
+</style>
+<script>
+    const div =document.createElement('div')//creates a  div inside the memory
+    console.log(div);
+    div.className="main"//add class name to div we just made
+    div.id=Math.floor(Math.random()*10+1)//just for fun 
+    div.setAttribute("title","generated title")
+    div.style.backgroundColor ="green"
+    div.innerText = "hi saurabh"
+   const addText= document.createTextNode("   hi saurabh")//same as innerText
+   div.appendChild(addText)//same as innerText
+   document.body.appendChild(div)//to show the div on the browser 
+</script>
+</html>

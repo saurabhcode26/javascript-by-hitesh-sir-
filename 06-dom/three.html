@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai and code | dom</title>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<style>
+    body{
+        background-color: black;
+        color: white;
+        }
+
+</style>
+<script>
+    function addLanguage(langName){
+       const li = document.createElement('li');
+       li.innerHTML = `${langName}`
+       document.querySelector('.language').
+       appendChild(li)//added the language in the list 
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+//optimized code for the above code
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+
+    //editing the value
+
+   const secondlang = document.querySelector("li:nth-child(2)")//selects the second language (python) whole li
+   console.log(secondlang);
+   const newli = document.createElement('li')//creates a new li for ("mojo")
+
+   newli.textContent = "mojo"
+   secondlang.replaceWith(newli)//changes the second language li with mojo li
+
+   const thirdLang = document.querySelector("li:first-child")//selects the li of javascript
+   thirdLang.outerHTML= '<li>Typescript<li>'
+
+
+   //remove
+
+   const lastlang = document.querySelector('li:last-child')
+   lastlang.remove();//removes the golang
+</script>
+</html>
