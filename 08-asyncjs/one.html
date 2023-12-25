@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>
+     saurabh has the </h1>
+    <button class="hi">hi</button>
+</body>
+</html>
+<script>
+    const saysaurabh = function(){
+    console.log("saurabh");
+}
+const changeText   = function(){document.querySelector('h1').innerHTML = "best body in the world"}
+setTimeout(changeText,5000)
+
+ const changeme = setTimeout(saysaurabh,5000)//prints only one time after 5 sec
+
+document.querySelector('.hi').addEventListener('click',function(){
+    clearTimeout(changeme)//stops the settimeout and stops in changing saurabh on clicking the button hi
+    console.log("stopped")
+})
+
+</script>
