@@ -1,0 +1,40 @@
+In JavaScript, the event.target property is used to access the element on which the event was originally triggered. 
+
+document.addEventListener('click', function(event) {
+  console.log('Event type:', event.type);         // Click event
+  console.log('Target element:', event.target);    // Element that triggered the event
+});
+
+document.addEventListener('click', function(event) {
+  console.log('Event type:', event.type);         // Click event
+  console.log('Target element:', event.target);    // Element that triggered the event
+});
+Now, if you click any button on the page, the event.target property will tell you which button was clicked.
+
+
+
+/// current target event
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>currentTarget Example</title>
+</head>
+<body>
+  <div id="outer">
+    <button id="inner">Click me</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+document.getElementById('outer').addEventListener('click', function(event) {
+  console.log('Current target:', event.currentTarget.id);
+  console.log('Target:', event.target.id);
+});
+In this example, a click event listener is attached to the outer div element. When you click the button inside the div, the event will bubble up to the div, and the event listener will log the id of both the currentTarget and the target:
+
+event.currentTarget.id: The ID of the element to which the event listener is attached (in this case, 'outer').
+event.target.id: The ID of the element that triggered the event (in this case, 'inner').

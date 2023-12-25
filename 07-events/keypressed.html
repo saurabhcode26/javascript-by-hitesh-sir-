@@ -1,0 +1,54 @@
+
+//The altKey property is a boolean value that is part of the Event object in JavaScript. It represents whether the "Alt" key was pressed or not when a keyboard event (like keydown, keyup, or keypress) occurs.
+
+//Here's an example of how you might use the altKey property in an event listener:
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //if altkey is pressed
+document.addEventListener('keydown', function(event) {
+    if (event.altKey) {
+      console.log('Alt key is pressed.');
+    } else {
+      console.log('Alt key is not pressed.');
+    }
+  });
+  //if ctrl key is pressed
+    document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey) {
+    console.log('Ctrl key is pressed.');
+  } else {
+    console.log('Ctrl key is not pressed.');
+  }
+});
+//if shift key is pressed
+document.addEventListener('keydown', function(event) {
+  if (event.shiftKey) {
+    console.log('Shift key is pressed.');
+  } else {
+    console.log('Shift key is not pressed.');
+  }
+});
+//if enter key is pressed
+document.addEventListener('keydown', function(event) {
+  // Check if the pressed key's code is "Enter"
+  if (event.code === 'Enter') {
+    // Code to run when the Enter key is pressed
+    console.log('Enter key pressed!');
+  }
+});
+
+
+
+  
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,111 @@
+types of event listener in JavaScript
+1)Click Event:
+
+Triggered when a user clicks on an element.
+
+example -
+element.addEventListener('click', function() {
+  // Code to run when the element is clicked
+});
+
+
+2)Mouseover and Mouseout Events:
+
+Triggered when the mouse pointer enters or leaves an element.
+example-
+ element.addEventListener('mouseover', function() {
+    // Code to run when the mouse enters the element
+  });
+  
+  element.addEventListener('mouseout', function() {
+    // Code to run when the mouse leaves the element
+ });
+  
+3)Submit Event:
+
+Triggered when a form is submitted.
+
+example -
+formElement.addEventListener('submit', function(event) {
+  // Code to run when the form is submitted
+  event.preventDefault(); // Prevents the default form submission behavior
+});
+
+4)Change Event:
+
+Triggered when the value of an input element changes (e.g., for text fields, checkboxes, and radio buttons).
+
+example -
+inputElement.addEventListener('change', function() {
+  // Code to run when the value changes
+});
+
+5)Keydown, Keypress, and Keyup Events:
+
+Triggered when a key on the keyboard is pressed down, when it is pressed and released, and when it is released, respectively.
+
+example - 
+
+document.addEventListener('keydown', function(event) {
+  // Code to run when a key is pressed down
+});
+
+document.addEventListener('keypress', function(event) {
+  // Code to run when a key is pressed and released
+});
+
+document.addEventListener('keyup', function(event) {
+  // Code to run when a key is released
+});
+ 
+6)Load Event:
+
+Triggered when a page or an image finishes loading.
+
+example-
+
+window.addEventListener('load', function() {
+  // Code to run when the entire page and its resources have finished loading
+});
+
+7)Resize Event:
+
+Triggered when the browser window is resized.
+example -
+window.addEventListener('resize', function() {
+  // Code to run when the window is resized
+});
+
+
+
+
+//Timestamp event listener
+
+
+In JavaScript, the timestamp associated with events refers to the time (in milliseconds) at which the event occurred.
+
+element.addEventListener('click', function(event) {
+  console.log('Event timestamp:', event.timeStamp);
+});
+In this example, the click event handler is logging the timestamp of the event to the console.
+
+Here's a simple example where the timestamp is used to measure the time between two click events:
+
+let lastClickTimestamp = 0;
+
+element.addEventListener('click', function(event) {
+  const currentTime = event.timeStamp;
+  const timeSinceLastClick = currentTime - lastClickTimestamp;
+
+  console.log('Time since last click (ms):', timeSinceLastClick);
+
+  lastClickTimestamp = currentTime;
+});
+
+
+
+
+
+
+
+  
