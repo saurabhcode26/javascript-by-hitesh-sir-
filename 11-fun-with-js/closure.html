@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure and chai</title>
+</head>
+<body>
+   <button class="orange">orange</button>
+   <button class="green">green</button>
+</body>
+<script>
+    function init() {
+  let name = "Mozilla"; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, that forms the closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+
+//lexical scoping is defined as if we give function inside a function then inside declared function will have the accssess of the outer declared function.
+
+
+function outer(){
+    let username = "saurabh"
+    console.log("outer",secret)//parent function can not have the access of child properties
+    function inner(){
+        let secret = "my123"
+        console.log("inner",username);//these willl have the access of username
+    }
+    function innertwo(){
+
+        console.log("innertwo",username);//these willl have the access of username
+        console.log(secret);//this will not have the access of  secret of inner function because sharing is only allowed between parent function but not in sibling function.
+    }
+    inner()
+    innertwo()
+}
+outer()
+console.log("too outer",username);//this will not have the access of the username
+
+
+
+
+//closure
+
+function makefun(){
+    const name = "mozilla";
+    function displayName(){
+        console.log(name);
+    }
+    return displayName;
+}
+const myFunc = makeFunc();
+myFunc();//now it has the access of name variable as it returns whole displayName function
+
+
+
+document.querySelector('.orange').onclick = function(){
+    document.body.style.backgroundColor = 'orange'
+}
+document.querySelector('.green').onclick = function(){
+    document.body.style.backgroundColor = 'green'
+}
+</script>
+<script>
+    function clickhandler(color){
+       // document.body.style.backgroundColor = `${color}`
+
+       return function(){
+        document.body.style.backgroundColor = `${color}`//by returning this when clickhandler is called it will execute this program and it has the accssess of color properties
+    }
+}
+
+   
+
+    document.querySelector('.orange').onclick= clickhandler("orange")
+    document.querySelector('.green').onclick= clickhandler("green")
+</script>
+</html>
